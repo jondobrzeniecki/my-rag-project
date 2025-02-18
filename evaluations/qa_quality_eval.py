@@ -14,6 +14,8 @@ def main():
     # Read configuration
     azure_config = AzureConfig()
 
+    print(azure_config)
+
     # Set required environment variables
     os.environ['AZURE_OPENAI_ENDPOINT'] = azure_config.aoai_endpoint
     os.environ['AZURE_OPENAI_API_KEY'] = azure_config.aoai_api_key    
