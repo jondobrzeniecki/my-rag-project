@@ -92,7 +92,7 @@ runs:
     - name: Setup Python 
       uses: actions/setup-python@v5
       with:
-          python-version: 3.8
+          python-version: 3.11
 
     - name: Provision environment
       shell: bash
@@ -222,6 +222,7 @@ runs:
           # Previous deployment exists. Update provisioned resources in case template has changed.
           if [  "$deployment_exists" = true ]; then
             echo "🔶 | Previous deployment exists. Updating provisioned resources in case template has changed..."
+            azd env set AZURE_PRINCIPAL_TYPE 'ServicePrincipal'
             azd provision --no-prompt
           fi
         fi
