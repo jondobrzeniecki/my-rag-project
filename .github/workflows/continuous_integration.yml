@@ -198,7 +198,7 @@ jobs:
       - name: Setup Python 
         uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: 3.11
 
       - name: Login to Azure CLI
         uses: azure/login@v2
